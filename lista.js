@@ -20,7 +20,7 @@ function imprimirContactos(listaContactos) {
   });
 }
 
-agregarContacto("stiven gonzalez", contactos);
+agregarContacto("stiven gonzales", contactos);
 imprimirContactos(contactos);
 borrarContacto("andres castro", contactos);
 imprimirContactos(contactos);
