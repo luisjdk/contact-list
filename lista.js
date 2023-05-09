@@ -37,6 +37,17 @@ function borrarContacto(idContacto, listaContactos) {
   }
 }
 
+function actualizarContacto(idContacto, nuevoContacto, listaContactos) {
+  const indice = listaContactos.findIndex(
+    (contacto) => contacto.id === idContacto
+  );
+  if (indice !== -1) {
+    listaContactos[indice] = nuevoContacto;
+  } else {
+    console.log("El contacto no existe en la lista");
+  }
+}
+
 function imprimirContactos(listaContactos) {
   console.log("Lista de contactos:");
   listaContactos.forEach((contacto) => {
@@ -64,5 +75,16 @@ const nuevoContacto = {
 agregarContacto(nuevoContacto, contactos);
 imprimirContactos(contactos);
 
-borrarContacto(2, contactos);
+const contactoActualizado = {
+  id: 2,
+  nombres: "Juan",
+  apellidos: "Pérez",
+  telefono: "3009876543",
+  ubicaciones: [{ ciudad: "Bogotá", direccion: "Carrera 50 #10-23" }],
+};
+
+actualizarContacto(2, contactoActualizado, contactos);
+imprimirContactos(contactos);
+
+borrarContacto(4, contactos);
 imprimirContactos(contactos);
